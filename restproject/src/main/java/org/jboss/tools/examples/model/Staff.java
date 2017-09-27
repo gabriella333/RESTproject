@@ -1,0 +1,25 @@
+package org.jboss.tools.examples.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Staff {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String name;
+	private String title;
+
+	public Staff() {
+	}
+
+	public Staff(String name, String title) {
+		this.name = name;
+		this.title = title;
+	}
+
+}

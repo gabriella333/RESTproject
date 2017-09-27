@@ -1,0 +1,37 @@
+package org.jboss.tools.examples.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Book {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String author;
+	private String title;
+
+	public Book() {
+	}
+
+	public Book(String author, String title) {
+		this.author = author;
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String toString() {
+		return "Book : " + this.author + " " + this.title;
+	}
+
+}
