@@ -11,42 +11,42 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.jboss.tools.examples.model.Member;
+import org.jboss.tools.examples.model.Person;
 
-@Path("/members")
+@Path("/persons")
 @RequestScoped
-public class MemberRest {
+public class PersonResourceRESTService {
 
 	@Inject
-	MemberDao memberdao;
+	PersonDao persondao;
 
 	@POST
-	@Path("/createmember")
+	@Path("/createperson")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public void addMember(Member member) {
-		memberdao.createMember(member);
+	public void addMember(Person person) {
+		persondao.createPerson(person);
 	}
 
 	@POST
-	@Path("/updatemember")
+	@Path("/updateperson")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public void refreshMember(Member member) {
-		memberdao.updateMember(member);
+	public void refreshMember(Person person) {
+		persondao.updatePerson(person);
 	}
 
 	@POST
-	@Path("/deletemember")
+	@Path("/deleteperson")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public void deleteMember(Member member) {
-		memberdao.removeMember(member);
+	public void deleteMember(Person person) {
+		persondao.removePerson(person);
 	}
 
 	@GET
-	@Path("/members")
-	public List<Member> mem(Member member) {
-		return memberdao.getAll(member);
+	@Path("/personslist")
+	public List<Person> p(Person person) {
+		return persondao.getAll(person);
 	}
 }

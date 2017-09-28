@@ -30,6 +30,14 @@ public class Person {
 		return name;
 	}
 
+	public List<Loan> getLoans() {
+		return loans;
+	}
+
+	public void setLoans(List<Loan> loans) {
+		this.loans = loans;
+	}
+
 	public String toString() {
 		return "Person: " + name;
 	}
