@@ -16,7 +16,7 @@ public class Loan {
 	private int id;
 	@ManyToOne
 	private Person person;
-	private Book book;
+	private Media media;
 	private Date date;
 	private boolean reminder;
 	private boolean bill;
@@ -24,9 +24,9 @@ public class Loan {
 	public Loan() {
 	}
 
-	public Loan(Person person, Book book) {
+	public Loan(Person person, Media media) {
 		this.person = person;
-		this.book = book;
+		this.media = media;
 		this.date = new Date();
 		this.reminder = false;
 		this.bill = false;
@@ -45,7 +45,7 @@ public class Loan {
 	}
 
 	public String toString() {
-		return "Loan: " + person.getName() + " has lended book " + book.getTitle() + " by " + book.getAuthor();
+		return "Loan: " + person.getName() + " has lended book " + media.getTitle() + " by " + media.getAuthor();
 	}
 
 }

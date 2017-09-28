@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Book {
+public class Media {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,10 +14,10 @@ public class Book {
 	private String author;
 	private String title;
 
-	public Book() {
+	public Media() {
 	}
 
-	public Book(String author, String title) {
+	public Media(String author, String title) {
 		this.author = author;
 		this.title = title;
 	}
