@@ -21,7 +21,7 @@ public class MemberRest {
 	MemberDao memberdao;
 
 	@POST
-	@Path("/creatememner")
+	@Path("/createmember")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public void addMember(Member member) {
@@ -29,15 +29,15 @@ public class MemberRest {
 	}
 
 	@POST
-	@Path("/updatePerson")
+	@Path("/updatemember")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public void refreshPerson(Member member) {
+	public void refreshMember(Member member) {
 		memberdao.updateMember(member);
 	}
 
 	@POST
-	@Path("/deletePerson")
+	@Path("/deletemember")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public void deleteMember(Member member) {
