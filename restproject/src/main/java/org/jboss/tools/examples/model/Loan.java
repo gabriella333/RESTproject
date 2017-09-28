@@ -2,11 +2,14 @@ package org.jboss.tools.examples.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Loan {
@@ -14,8 +17,11 @@ public class Loan {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "person")
 	private Person person;
+	@OneToOne (cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "media")
 	private Media media;
 	private Date date;
 	private boolean reminder;
