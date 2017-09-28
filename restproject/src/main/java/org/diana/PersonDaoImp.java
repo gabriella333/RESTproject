@@ -32,10 +32,10 @@ public class PersonDaoImp implements PersonDao {
 	}
 
 	@Override
-	public List<Person> findByFirstName(String firstname) {
+	public List<Person> findPersonByName(String name) {
 
 		return em.createQuery("from Person p where p.firstname like: firstname", Person.class)
-				.setParameter("firstname", firstname).getResultList();
+				.setParameter("firstname", name).getResultList();
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class PersonDaoImp implements PersonDao {
 	}
 
 	@Override
-	public Person findById(int id) {
+	public Person findPersonById(int id) {
 		return em.find(Person.class, id);
 
 	}
