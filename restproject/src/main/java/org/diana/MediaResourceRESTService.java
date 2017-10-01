@@ -2,7 +2,6 @@ package org.diana;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.print.attribute.standard.Media;
 import javax.ws.rs.Consumes;
@@ -13,10 +12,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/media")
-@RequestScoped
 public class MediaResourceRESTService {
 
-	//TODO
 	@Inject
 	MediaDao mediadao;
 

@@ -1,7 +1,6 @@
 package org.diana;
 
-import java.util.Date;
-import java.util.Scanner;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -12,8 +11,6 @@ public class LoanDaoImp implements LoanDao {
 
 	@Inject
 	private EntityManager em;
-	Date date;
-	Scanner sc = new Scanner(System.in);
 
 	@Override
 	public void removeLoan(Loan loan) {
@@ -21,11 +18,16 @@ public class LoanDaoImp implements LoanDao {
 
 	}
 
-	//TODO
-	@Override
+	@Override 
 	public void renewLoan(Loan loan) {
-		loan.setDate(date);
+		Loan l = new Loan();
+		l.renewLoan();
 
+	}
+
+	@Override
+	public List<Loan> getAll() {
+		return em.createQuery("from Loan l", Loan.class).getResultList();
 	}
 
 }
