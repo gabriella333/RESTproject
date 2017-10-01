@@ -2,13 +2,13 @@ package org.diana;
 
 import java.util.List;
 
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import org.jboss.tools.examples.model.Staff;
 
-@Stateful
+@Stateless
 public class StaffDaoImp implements StaffDao {
 
 	@Inject

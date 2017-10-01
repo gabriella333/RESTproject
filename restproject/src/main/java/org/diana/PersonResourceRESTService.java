@@ -2,7 +2,7 @@ package org.diana;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+//import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 import org.jboss.tools.examples.model.Person;
 
 @Path("/persons")
-@RequestScoped
+//@RequestScoped
 public class PersonResourceRESTService {
 
 	@Inject

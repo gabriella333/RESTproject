@@ -16,7 +16,7 @@ public interface MediaDao {
 
 	List<Media> getAllMedia(Media media);
 
-	Media findMediaByAuthor(String author);
+	List<Media> findMediaByAuthor(String author);
 
 	List<Media> findMediaByTitle(String title);
 }

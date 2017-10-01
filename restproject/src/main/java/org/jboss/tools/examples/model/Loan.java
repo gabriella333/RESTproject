@@ -20,7 +20,7 @@ public class Loan {
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "person")
 	private Person person;
-	@OneToOne (cascade = CascadeType.PERSIST)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "media")
 	private Media media;
 	private Date date;
@@ -36,6 +36,14 @@ public class Loan {
 		this.date = new Date();
 		this.reminder = false;
 		this.bill = false;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public String hasBeenReminded() {

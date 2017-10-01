@@ -2,14 +2,14 @@ package org.diana;
 
 import java.util.List;
 
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import org.jboss.tools.examples.model.Loan;
 import org.jboss.tools.examples.model.Person;
 
-@Stateful
+@Stateless
 public class PersonDaoImp implements PersonDao {
 
 	@Inject
@@ -59,10 +59,9 @@ public class PersonDaoImp implements PersonDao {
 
 	}
 
-	// TODO
 	@Override
 	public List<Loan> getAllLoans(Person person) {
-		return (List<Loan>) em.find(Person.class, person.getLoans());
+		return em.find(Person.class, person).getLoans();
 	}
 
 }

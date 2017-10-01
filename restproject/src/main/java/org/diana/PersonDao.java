@@ -18,9 +18,9 @@ public interface PersonDao {
 
 	List<Person> getAll(Person person);
 
-	Person findById(int id);
+	Person findPersonById(int id);
 
-	List<Person> findByFirstName(String firstname);
+	List<Person> findPersonByName(String name);
 
 	List<Loan> getAllLoans(Person person);
 
