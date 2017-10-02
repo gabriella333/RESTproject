@@ -3,13 +3,14 @@ package org.diana;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import org.jboss.tools.examples.model.Media;
 
 @Path("/media")
 public class MediaResourceRESTService {
@@ -20,7 +21,7 @@ public class MediaResourceRESTService {
 	@POST
 	@Path("/createmedia")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	//@Produces(MediaType.APPLICATION_JSON)
 	public void addMedia(Media media) {
 		mediadao.createMedia(media);
 	}
@@ -44,7 +45,7 @@ public class MediaResourceRESTService {
 	@GET
 	@Path("/medialist")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Media> m(Media media) {
+	public List<Media> m() {
 		return mediadao.getAllMedia();
 	}
 }

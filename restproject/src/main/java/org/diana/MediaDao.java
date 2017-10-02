@@ -3,7 +3,9 @@ package org.diana;
 import java.util.List;
 
 import javax.ejb.Local;
-import javax.print.attribute.standard.Media;
+
+import org.jboss.tools.examples.model.Media;
+
 
 @Local
 public interface MediaDao {

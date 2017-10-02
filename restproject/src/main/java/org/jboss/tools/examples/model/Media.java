@@ -30,6 +30,14 @@ public class Media {
 		return title;
 	}
 
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public String toString() {
 		return "Book : " + this.author + " " + this.title;
 	}

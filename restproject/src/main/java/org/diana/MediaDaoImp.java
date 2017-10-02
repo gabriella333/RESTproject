@@ -5,7 +5,8 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.print.attribute.standard.Media;
+
+import org.jboss.tools.examples.model.Media;
 
 @Stateless
 public class MediaDaoImp implements MediaDao {
