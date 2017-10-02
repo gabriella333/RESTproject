@@ -21,9 +21,9 @@ public class MediaDaoImp implements MediaDao {
 	}
 
 	@Override
-	public void removeMedia(Media media) {
+	public void deleteMedia(int id) {
+		Media media = em.find(Media.class, id);
 		em.remove(media);
-		
 	}
 
 	@Override

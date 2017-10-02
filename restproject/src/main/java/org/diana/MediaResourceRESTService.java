@@ -7,19 +7,22 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.jboss.tools.examples.model.Media;
+
 
 @Path("/media")
 public class MediaResourceRESTService {
 
 	@Inject
 	MediaDao mediadao;
+	
 
 	@POST
-	@Path("/createmedia")
+	@Path("/create")
 	@Consumes(MediaType.APPLICATION_JSON)
 	//@Produces(MediaType.APPLICATION_JSON)
 	public void addMedia(Media media) {
@@ -27,25 +30,43 @@ public class MediaResourceRESTService {
 	}
 
 	@POST
-	@Path("/updatemedia")
+	@Path("/update")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	//@Produces(MediaType.APPLICATION_JSON)
 	public void refreshMedia(Media media) {
 		mediadao.updateMedia(media);
 	}
 
 	@POST
-	@Path("/deletemedia")
+	@Path("/delete/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public void deletemedia(Media media) {
-		mediadao.removeMedia(media);
+	//@Produces(MediaType.APPLICATION_JSON)
+	public void deletemedia( @PathParam("id") int id) {
+		mediadao.deleteMedia(id);
 	}
 
 	@GET
-	@Path("/medialist")
+	@Path("/list")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Media> m() {
+	public List<Media> mediaList() {
 		return mediadao.getAllMedia();
 	}
+	
+	@GET
+	@Path("/listbyauthor/{a}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Media> mediaByAuthor( @PathParam("a") String author) {
+		return mediadao.findMediaByAuthor(author);
+	}
+		
+	
+	@GET
+	@Path("/listbytitle/{t}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Media> mediaByTitle( @PathParam("t") String title) {
+		return mediadao.findMediaByTitle(title);
+	}
+	
+	
+	
 }

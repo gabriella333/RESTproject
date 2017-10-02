@@ -12,7 +12,7 @@ public interface MediaDao {
 
 	void createMedia(Media media);
 
-	void removeMedia(Media media);
+	void deleteMedia(int id);
 
 	void updateMedia(Media media);
 
