@@ -20,26 +20,27 @@ public class StaffResourceRESTService {
 	StaffDao staffdao;
 
 	@POST
-	@Path("/createstaff")
+	@Path("/create")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	//@Produces(MediaType.APPLICATION_JSON)
 	public void addMember(Staff staff) {
 		staffdao.createStaff(staff);
 	}
 
 	@POST
-	@Path("/updatestaff")
+	@Path("/update")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	//@Produces(MediaType.APPLICATION_JSON)
 	public void refreshStaff(Staff staff) {
 		staffdao.updateStaff(staff);
 	}
 
 	@POST
-	@Path("/deletestaff")
+	@Path("/delete")
+	//@Path("/deletestaff/{staffId}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public void deleteStaff(Staff staff) {
+	//@Produces(MediaType.APPLICATION_JSON)
+	public void deleteStaff(Staff staff) {		
 		staffdao.removeStaff(staff);
 	}
 

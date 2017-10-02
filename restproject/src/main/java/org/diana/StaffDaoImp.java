@@ -22,18 +22,18 @@ public class StaffDaoImp implements StaffDao {
 
 	@Override
 	public void removeStaff(Staff staff) {
-
-		if (!em.contains(staff)) {
+		List<Staff> s= findStaffByName(staff.getName());
+		if (s.isEmpty()) {
 			System.out.println("There is no such a person!");
 		} else
-			em.remove(staff);
+			em.remove(s.get(0));
 
 	}
 
 	@Override
 	public List<Staff> findStaffByName(String name) {
 
-		return em.createQuery("from Staff s where s.name like: name", Staff.class)
+		return em.createQuery("from Staff s where s.name like:name", Staff.class)
 				.setParameter("name", name).getResultList();
 	}
 
