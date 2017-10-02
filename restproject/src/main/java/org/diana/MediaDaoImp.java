@@ -32,7 +32,7 @@ public class MediaDaoImp implements MediaDao {
 	}
 
 	@Override
-	public List<Media> getAllMedia(Media media) {
+	public List<Media> getAllMedia() {
 		return em.createQuery("from Media m", Media.class).getResultList();
 	}
 

@@ -48,7 +48,7 @@ public class StaffDaoImp implements StaffDao {
 	}
 
 	@Override
-	public List<Staff> getAllStaff(Staff staff) {
+	public List<Staff> getAllStaff() {
 		return em.createQuery("from Staff s", Staff.class).getResultList();
 	}
 

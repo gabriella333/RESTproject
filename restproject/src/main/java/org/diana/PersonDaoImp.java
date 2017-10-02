@@ -17,7 +17,6 @@ public class PersonDaoImp implements PersonDao {
 
 	@Override
 	public void createPerson(Person person) {
-
 		em.persist(person);
 	}
 
@@ -49,7 +48,7 @@ public class PersonDaoImp implements PersonDao {
 	}
 
 	@Override
-	public List<Person> getAll(Person person) {
+	public List<Person> getAll() {
 		return em.createQuery("from Person p", Person.class).getResultList();
 	}
 

@@ -45,8 +45,9 @@ public class StaffResourceRESTService {
 
 	@GET
 	@Path("/stafflist")
-	public List<Staff> s(Staff staff) {
-		return staffdao.getAllStaff(staff);
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Staff> s() {
+		return staffdao.getAllStaff();
 	}
 
 }

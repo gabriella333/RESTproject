@@ -43,7 +43,8 @@ public class MediaResourceRESTService {
 
 	@GET
 	@Path("/medialist")
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Media> m(Media media) {
-		return mediadao.getAllMedia(media);
+		return mediadao.getAllMedia();
 	}
 }

@@ -18,7 +18,7 @@ public class LoanDaoImp implements LoanDao {
 
 	}
 
-	@Override 
+	@Override
 	public void renewLoan(Loan loan) {
 		Loan l = new Loan();
 		l.renewLoan();

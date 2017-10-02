@@ -23,7 +23,7 @@ public class PersonResourceRESTService {
 	@POST
 	@Path("/createperson")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	//@Produces(MediaType.APPLICATION_JSON)
 	public void addMember(Person person) {
 		persondao.createPerson(person);
 	}
@@ -46,7 +46,8 @@ public class PersonResourceRESTService {
 
 	@GET
 	@Path("/personslist")
-	public List<Person> p(Person person) {
-		return persondao.getAll(person);
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Person> p() {
+		return persondao.getAll();
 	}
 }

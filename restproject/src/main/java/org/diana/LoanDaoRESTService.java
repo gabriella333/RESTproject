@@ -36,7 +36,8 @@ public class LoanDaoRESTService {
 
 	@GET
 	@Path("/loanlist")
-	public List<Loan> l(Loan loan) {
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Loan> l() {
 		return loandao.getAll();
 	}
 }

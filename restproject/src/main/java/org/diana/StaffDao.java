@@ -15,7 +15,7 @@ public interface StaffDao {
 
 	void updateStaff(Staff staff);
 
-	List<Staff> getAllStaff(Staff staff);
+	List<Staff> getAllStaff();
 
 	Staff findStaffById(int id);
 
