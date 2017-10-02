@@ -22,29 +22,28 @@ public class PersonDaoImp implements PersonDao {
 
 	@Override
 	public void removePerson(Person person) {
+		List<Person> people = findPersonByName(person.getName());
 
-		if (!em.contains(person)) {
+		if (people.isEmpty())
 			System.out.println("There is no such a person!");
-		} else
-			em.remove(person);
+		else
+			em.remove(people.get(0));
 
 	}
 
 	@Override
 	public List<Person> findPersonByName(String name) {
 
-		return em.createQuery("from Person p where p.firstname like: firstname", Person.class)
-				.setParameter("firstname", name).getResultList();
+		return em.createQuery("from Person p where p.name like:name", Person.class).setParameter("name", name)
+				.getResultList();
 	}
 
 	@Override
 	public void updatePerson(Person person) {
-
 		if (!em.contains(person)) {
 			System.out.println("There is no such a person!");
 		}
 		em.merge(person);
-
 	}
 
 	@Override
